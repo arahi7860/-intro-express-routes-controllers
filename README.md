@@ -516,13 +516,13 @@ app.get("/", controller.index);
 // Controller:
 const controller = {
   index: (req, res) => {
-    res.render("index", { page: "homepage" });
+    res.send('hello world');
   }
 }
 ```
 
 The `controller` object acts as our controller and each method we place inside
-that object is a controller action (in REST, `index`, `show`, `new`, `create`,
+that object is a controller action (in REST, we use the naming conventions `index`, `show`, `new`, `create`,
 `edit`, `update`, or `delete`). Then our router just adds our controller actions
 where appropriate. This gets to be a lot more readable when we want to have
 multiple actions per route, like when we want to make sure a user is
@@ -535,3 +535,11 @@ app.get("/", config.isAuthenticated, controller.index);
 Our `isAuthenticated` method will check to see if a user is signed in. If they
 are, then we'll move on to the `controller.index` action; if they are not, then
 we'll redirect them to the sign in page.
+
+## You Do / Build a Simple Express App
+
+We're going to work through building out the routes and controllers for a simple Express app. [This is the link to the repo.](https://git.generalassemb.ly/dc-wdi-node-express/routes-controllers-practice) Follow the instructions there on how to get started.
+
+## Closing
+
+Over the next few classes, we're going to continue using Express to building out dynamic applications. Next, we'll learn about Models and build out models for our apps so that we can incorporate data interaction with MongoDB.
