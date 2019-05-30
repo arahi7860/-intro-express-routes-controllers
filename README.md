@@ -416,15 +416,15 @@ Bookmark this table! It can be really helpful to think through your routes.
 Believe it or not: almost every action you perform on the web can be described
 by one of these.
 
-| URL                | Path        | Method        | Action  | Description                                        |
-| ------------------ | ----------- | ------------- | ------- | -------------------------------------------------- |
-| `/resource`        | `/`         | `GET`         | #index  | List all items of `resource`                       |
-| `/resource/new`    | `/new`      | `GET`         | #new    | Render form to create a new instance of `resource` |
-| `/resource`        | `/`         | `POST`        | #create | Create new `resource` in the database              |
-| `/resource/1`      | `/:id`      | `GET`         | #show   | Show a single `resource`                           |
-| `/resource/1/edit` | `/:id/edit` | `GET`         | #edit   | Render form to update a single `resource`          |
-| `/resource/1`      | `/:id`      | `PATCH`/`PUT` | #update | Update `resource` in the database                  |
-| `/resource/1`      | `/:id`      | `DELETE`      | #delete | Delete a `resource`                                |
+| URL                | Path        | Method        | Action   | Description                                        |
+| ------------------ | ----------- | ------------- | -------- | -------------------------------------------------- |
+| `/resource`        | `/`         | `GET`         | #index   | List all items of `resource`                       |
+| `/resource/new`    | `/new`      | `GET`         | #new     | Render form to create a new instance of `resource` |
+| `/resource`        | `/`         | `POST`        | #create  | Create new `resource` in the database              |
+| `/resource/1`      | `/:id`      | `GET`         | #show    | Show a single `resource`                           |
+| `/resource/1/edit` | `/:id/edit` | `GET`         | #edit    | Render form to update a single `resource`          |
+| `/resource/1`      | `/:id`      | `PATCH`/`PUT` | #update  | Update `resource` in the database                  |
+| `/resource/1`      | `/:id`      | `DELETE`      | #destroy | Delete a `resource`                                |
 
 ### Defining Routes in Express
 
