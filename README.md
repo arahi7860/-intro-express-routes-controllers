@@ -22,8 +22,12 @@ By the end of this lesson, developers should be able to:
   - Browser requests
   - Status codes
   - HTTP methods
+- Build a simple server side application with Express:
+  - Configure Express application
+  - Routes
+  - Params
   - RESTful architecture
-- Build a simple server side application with Express.
+  - Controllers
 
 ## Introduction
 
@@ -145,7 +149,7 @@ site:
 - `www.cat-astrophy.com/mr-fuzzy-pants.html`
 - `www.cat-astrophy.com/purrrasaurus-rex.html`
 - `www.cat-astrophy.com/walter.html`
-- ...
+- etc
 
 You would have to make a full HTML document for each page. None of the HTML
 would change from page to page, but the information inside of that HTML would -
@@ -181,22 +185,26 @@ So much easier!
 ## Express
 
 Express is a minimalistic web framework. Compared to web frameworks like Django
-and Ruby on Rails, Express is tiny. But it was intentionally designed that way.
-Throughout Express' history and development, the core of the web framework has
-gotten smaller as more and more functionality is spun-off into separate
-packages.
+and Ruby on Rails, Express is tiny.
+
+But it was intentionally designed that way. Throughout Express' history and
+development, the core of the web framework has gotten smaller as more and more
+functionality is spun-off into separate packages.
 
 Express feels "close to the wire" - i.e. you will be building out the
-functionality that you want. This minimalism comes with some trade-offs. On the
-one hand, you won't have unnecessarily complicated code in your application or
-things that you don't need. It also means you'll be responsible for building out
-everything you do need.
+functionality that you want. This minimalism comes with some trade-offs.
+
+On the one hand, you won't have unnecessarily complicated code in your
+application or things that you don't need. It also means you'll be responsible
+for building out everything you do need.
 
 Additionally, Express is very unopinionated: it doesn't really care how you
 structure your app, for instance, and doesn't provide any guidance on how to do
-so. That makes it extremely flexible and practical for a lot of different types
-and sizes of applications; it also means that you have to figure out the
-structure yourself. PayPal uses Express, but built a more opinionated framework
+so.
+
+That makes it extremely flexible and practical for a lot of different types and
+sizes of applications; it also means that you have to figure out the structure
+yourself. PayPal uses Express, but built a more opinionated framework
 (Kraken.js) on top of it to give its developers more structure.
 
 ## Setting up an Express App
