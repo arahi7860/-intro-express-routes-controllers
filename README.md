@@ -380,7 +380,7 @@ Route parameters are named sections of our path, they are placeholders (similar
 to variables or parameters) that capture values at their location in a URL.
 
 These values are held in the `req.params` object and can be used to deliver
-custom responses to an HTTP request.
+dynamic responses to an HTTP request.
 
 Now if we visit `http://localhost:4000/Whiskers`, we should see:
 
