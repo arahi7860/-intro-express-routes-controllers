@@ -16,9 +16,13 @@ and how Express fits in to building full-stack applications.
 
 By the end of this lesson, developers should be able to:
 
+- Define what an application framework is
 - Explain and understand the request-response cycle
-- Discuss how the internet works including browser requests, status codes, HTTP
-  methods and REST
+- Discuss how the internet works including:
+  - browser requests
+  - status codes
+  - HTTP methods
+  - RESTful architecture
 - Build a simple server side application with Express
 
 ## Introduction
@@ -335,6 +339,7 @@ Let's update `index.js` to include:
 
 ```js
 app.get("/:name", (req, res) => {
+  console.log(req.params);
   res.send(`Hello ${req.params.name}`);
 });
 ```
