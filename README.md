@@ -550,15 +550,25 @@ the routes by:
 const express = require("express");
 const router = express.Router();
 
-router.get("/", function(req, res) {});
+router.get("/", function(req, res) {
+  res.send("author - hello from GET");
+});
 
-router.post("/", function(req, res) {});
+router.post("/", function(req, res) {
+  res.send("author - hello from POST");
+});
 
-router.put("/:id", function(req, res) {});
+router.put("/:id", function(req, res) {
+  res.send("author:id - hello from PUT");
+});
 
-router.patch("/:id", function(req, res) {});
+router.patch("/:id", function(req, res) {
+  res.send("author:id hello from GET");
+});
 
-router.delete("/:id", function(req, res) {});
+router.delete("/:id", function(req, res) {
+  res.send("author:id - hello from DELETE");
+});
 
 module.exports = router;
 ```
@@ -571,11 +581,10 @@ const express = require("express");
 const app = express();
 const authorRouter = require("./routes/author.js");
 
-// skipping previous code
-
+// add befpre the previous routs
 app.use("/author", authorRouter);
 
-// skipping app.listen
+// rest of the code
 ```
 
 ## RESTful routing in Express
