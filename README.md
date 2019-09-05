@@ -27,6 +27,8 @@ By the end of this lesson, developers should be able to:
 
 ## Introduction
 
+### What is a Framework?
+
 Express is a framework for building web applications. What does that mean?
 
 In development, a framework is a collection of tools, patterns, and conventions
@@ -73,6 +75,9 @@ telegrams.
 Requests always have these three parts:
 
 1. Request line (including the URL and the HTTP Method)
+
+- We will refer to the _path_ and _method_ of a request throughout the lesson.
+
 2. Request header (additional information about the request and what we expect
    in the response)
 3. Body message (optional - things like form data)
@@ -82,6 +87,8 @@ Responses in turn always have these three parts:
 1. Status (a status code indicating how the request was handled)
 2. Response header (additional information about the response)
 3. Body message (optional - an html document, JSON, XML)
+
+### HTTP Methods
 
 Clients make requests to a location (called a URL) using a method. There are 10
 possible HTTP methods, but only 5 that are important:
@@ -118,7 +125,7 @@ attribute of the `<form>` element. The fields in the form become the request
 body. The server processes the request (typically saving the request body to a
 database) and then sends a response.
 
-### Why Do We Care?
+### Why Do We Care? How can we use this?
 
 When the internet was first created, you would request a document that already
 existed (in full) on the server. So when you typed in
