@@ -1,8 +1,8 @@
 # Intro to Express: Routes & Controllers
 
 Today is a big day in SEI! We've build front-end applications using our
-knowledge and expertise of HTML, CSS and JavaScript. Over the next few weeks
-we're going to venture in to new territory: building full-stack applications!
+knowledge and expertise of HTML, CSS and JavaScript. Next we're going to venture
+in to new territory: building full-stack applications!
 
 The framework we're going to learn for building full-stack applications is
 called Express. We're going to use it to build feature-rich applications, like
@@ -16,30 +16,32 @@ and how Express fits in to building full-stack applications.
 
 By the end of this lesson, developers should be able to:
 
-- Define what an application framework is
-- Explain and understand the request-response cycle
+- Define what an application framework is.
+- Explain and understand the request-response cycle.
 - Discuss how the internet works including:
-  - browser requests
-  - status codes
+  - Browser requests
+  - Status codes
   - HTTP methods
   - RESTful architecture
-- Build a simple server side application with Express
+- Build a simple server side application with Express.
 
 ## Introduction
 
 Express is a framework for building web applications. What does that mean?
 
 In development, a framework is a collection of tools, patterns, and conventions
-that let you perform some task quickly and efficiently. There are lots of
-different kinds of frameworks for different kinds of tasks. There are frameworks
-for building command line applications, frameworks for deploying applications to
-the cloud, and frameworks for running tests against an application to make sure
-everything is working as it's supposed to.
+that let you perform some task quickly and efficiently.
 
-Express is a framework for building web applications, meaning it's a set of
-tools, patterns, and conventions for building applications for the internet. It
-works within the confines of the internet so that when you navigate to a URL in
-your browser, an app built with Express can handle that URL and send you some
+There are lots of different kinds of frameworks for different kinds of tasks.
+There are frameworks for building command line applications, frameworks for
+deploying applications to the cloud, and frameworks for running tests against an
+application to make sure everything is working as it's supposed to.
+
+Express is a framework for building _web applications_, meaning it's a set of
+tools, patterns, and conventions for building applications for the internet.
+
+It works within the context of the internet so that when you navigate to a URL
+in your browser, an app built with Express can handle that URL and send you some
 response (like an HTML file).
 
 ## Review: How Does the Internet Work?
