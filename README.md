@@ -417,7 +417,7 @@ A resource is any domain of our application. Generally, if you have a model in
 your app, it can be considered a resource (though not always). In a to do list
 application, the resources are probably: to do items, to do lists, and users.
 
-Another explaination about what exactly we mean by
+Another explaination about what is
 [a resource:](https://stackoverflow.com/questions/10799198/what-are-rest-resources/10883810#10883810)
 
 > A resource is anything that’s important enough to be referenced as a thing in
@@ -443,7 +443,7 @@ doesn't necessarily meant that every resource will have
 [all of these routes and actions](https://restfulrouting.com/#introduction) -
 but that our routes and actions should follow this pattern.
 
-#### Recap
+#### Recap: URL Routes
 
 A **route** is a **path** and a **verb**:
 
@@ -533,13 +533,20 @@ app.delete("/:id", function(req, res) {});
 ```
 
 The examples above attach routes directly to the instance of our Express app.
-This works great if our app is small and only has a few routes. The apps we're
-building are big, so defining our routes like this will quickly become
-unmanageable. So we're going to use the
+This works great if our app is small and only has a few routes.
+
+The apps we're building are big, so defining our routes like this will quickly
+become unmanageable. So we're going to use the
 [Express Router](https://expressjs.com/en/4x/api.html#router):
 
+If we used the Author model as the basis of our resource, we can start building
+the routes by:
+
+- Creating a directory called `routes` in the root of th express application.
+- Creating a `routes/author.js` file and enter the following:
+
 ```js
-// router.js
+// routes/author.js
 const express = require("express");
 const router = express.Router();
 
@@ -562,9 +569,13 @@ our Express app):
 ```js
 const express = require("express");
 const app = express();
-const router = require("./router.js");
+const authorRouter = require("./routes/author.js");
 
-app.use("/", router);
+// skipping previous code
+
+app.use("/author", authorRouter);
+
+// skipping app.listen
 ```
 
 ## RESTful routing in Express
@@ -583,7 +594,7 @@ import it into our router. Then, we'll define our routes and map them to the
 corresponding controller action.
 
 ```js
-// controllers/todo.js
+// controllers/auythor.js
 module.exports = {
   index: function(req, res) {
     // listing all to dos
@@ -613,15 +624,15 @@ module.exports = {
 // routers/todo.js
 const express = require("express");
 const router = express.Router();
-const todoController = require("../controllers/todo.js");
+const authorController = require("../controllers/author.js");
 
-router.get("/", todoController.index);
-router.get("/new", todoController.new);
-router.post("/", todoController.create);
-router.get("/:id", todoController.show);
-router.get("/:id/edit", todoController.edit);
-router.put("/:id", todoController.update);
-router.destroy("/:id", todoController.destroy);
+router.get("/", authorController.index);
+router.get("/new", authorController.new);
+router.post("/", authorController.create);
+router.get("/:id", authorController.show);
+router.get("/:id/edit", authorController.edit);
+router.put("/:id", authorController.update);
+router.destroy("/:id", authorController.destroy);
 
 module.exports = router;
 ```
