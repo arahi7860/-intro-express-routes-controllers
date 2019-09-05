@@ -428,8 +428,9 @@ items would therefore look like this:
 | `/todo/1`      | `/:id`      | `DELETE`      | #destroy | Delete a to do                    |
 
 For every resource in our application, we want to follow this structure. That
-doesn't necessarily meant that every resource will have all of these routes and
-actions - but that our routes and actions should follow this pattern.
+doesn't necessarily meant that every resource will have
+[all of these routes and actions](https://restfulrouting.com/#introduction) -
+but that our routes and actions should follow this pattern.
 
 #### Recap
 
@@ -457,6 +458,14 @@ by one of these.
 | `/resource/1/edit` | `/:id/edit` | `GET`         | #edit    | Render form to update a single `resource`          |
 | `/resource/1`      | `/:id`      | `PATCH`/`PUT` | #update  | Update `resource` in the database                  |
 | `/resource/1`      | `/:id`      | `DELETE`      | #destroy | Delete a `resource`                                |
+
+Here's a good explaination about what exactly we mean by
+[a resource:](https://stackoverflow.com/questions/10799198/what-are-rest-resources/10883810#10883810)
+
+> A resource is anything that’s important enough to be referenced as a thing in
+> itself... Usually, a resource is something that can be stored on a computer
+> and represented as a stream of bits: a document, a row in a database, or the
+> result of running an algorithm.
 
 ### Defining Routes in Express
 
