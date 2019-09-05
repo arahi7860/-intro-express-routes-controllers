@@ -470,6 +470,15 @@ by one of these.
 | `/resource/1`      | `/:id`      | `PATCH`/`PUT` | #update  | Update `resource` in the database                  |
 | `/resource/1`      | `/:id`      | `DELETE`      | #destroy | Delete a `resource`                                |
 
+The resource table is has two general sections:
+
+1. Actions that affect the resource as a whole.
+2. Actions that affect individual resources.
+
+The seven named actions here are the
+["golden seven"](https://restfulrouting.com/#golden-seven) that engineers and
+frameworks commonly reference.
+
 ### Defining Routes in Express
 
 Defining routes in Express is pretty straightforward. Every route we define is
