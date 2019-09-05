@@ -603,34 +603,41 @@ import it into our router. Then, we'll define our routes and map them to the
 corresponding controller action.
 
 ```js
-// controllers/auythor.js
+// controllers/author.js
 module.exports = {
   index: function(req, res) {
-    // listing all to dos
+    // listing all authors
+    res.send("listing all authors");
   },
   new: function(req, res) {
-    // rending the form to create a new to do
+    // rending the form to create a new author
+    res.send("rending the form to create a new author");
   },
   create: function(req, res) {
-    // creating a new to do and saving it to the database
+    // creating a new author and saving it to the database
+    res.send("creating a new author and saving it to the database");
   },
   show: function(req, res) {
-    // displaying the data for a single to do
+    // displaying the data for a single author
+    res.send("displaying the data for a single author");
   },
   edit: function(req, res) {
-    // rendering the form to update an existing to do
+    // rendering the form to update an existing author
+    res.send("rendering the form to update an existing author");
   },
   update: function(req, res) {
-    // updating a to do in the database
+    // updating an author in the database
+    res.send("updating an author in the database");
   },
   destroy: function(req, res) {
-    // deleting a to do
+    // deleting an author
+    res.send("deleting an author");
   }
 };
 ```
 
 ```js
-// routers/todo.js
+// routers/author.js
 const express = require("express");
 const router = express.Router();
 const authorController = require("../controllers/author.js");
