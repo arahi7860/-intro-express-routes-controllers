@@ -378,6 +378,7 @@ Our route has changed! What is different?
 
 Route parameters are named sections of our path, they are placeholders (similar
 to variables or parameters) that capture values at their location in a URL.
+
 These values are held in the `req.params` object and can be used to deliver
 custom responses to an HTTP request.
 
@@ -404,15 +405,25 @@ There was no pattern for designing routes! This is where REST comes in.
 
 REST stands for **Representational State Transfer**. REST solves a number of
 problems with routing, but the most important for our use cases is the problem
-of the relationship between URLs and HTTP methods and how we should define our
-Routes. When we're building web applications (in any framework) we want our
-routes to be RESTful, meaning they follow the guidelines of REST. What does that
-mean?
+of the relationship between URL paths and HTTP methods and how we should define
+our Routes.
 
-The first thing to consider is, what is our _resource_? A resource is any domain
-of our application. Generally, if you have a model in your app, it can be
-considered a resource (though not always). In a to do list application, the
-resources are probably: to do items, to do lists, and users.
+When we're building web applications (in any framework) we want our routes to be
+RESTful, meaning they follow the guidelines of REST. What does that mean?
+
+The first thing to consider is, what is our _resource_?
+
+A resource is any domain of our application. Generally, if you have a model in
+your app, it can be considered a resource (though not always). In a to do list
+application, the resources are probably: to do items, to do lists, and users.
+
+Another explaination about what exactly we mean by
+[a resource:](https://stackoverflow.com/questions/10799198/what-are-rest-resources/10883810#10883810)
+
+> A resource is anything that’s important enough to be referenced as a thing in
+> itself... Usually, a resource is something that can be stored on a computer
+> and represented as a stream of bits: a document, a row in a database, or the
+> result of running an algorithm.
 
 A table of our REST routes and their corresponding controller actions for to do
 items would therefore look like this:
@@ -458,14 +469,6 @@ by one of these.
 | `/resource/1/edit` | `/:id/edit` | `GET`         | #edit    | Render form to update a single `resource`          |
 | `/resource/1`      | `/:id`      | `PATCH`/`PUT` | #update  | Update `resource` in the database                  |
 | `/resource/1`      | `/:id`      | `DELETE`      | #destroy | Delete a `resource`                                |
-
-Here's a good explaination about what exactly we mean by
-[a resource:](https://stackoverflow.com/questions/10799198/what-are-rest-resources/10883810#10883810)
-
-> A resource is anything that’s important enough to be referenced as a thing in
-> itself... Usually, a resource is something that can be stored on a computer
-> and represented as a stream of bits: a document, a row in a database, or the
-> result of running an algorithm.
 
 ### Defining Routes in Express
 
