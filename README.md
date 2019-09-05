@@ -425,18 +425,18 @@ Another explaination about what is
 > and represented as a stream of bits: a document, a row in a database, or the
 > result of running an algorithm.
 
-A table of our REST routes and their corresponding controller actions for to do
-items would therefore look like this:
+A table of our REST routes and their corresponding controller actions for
+authors items would therefore look like this:
 
-| URL            | Path        | Method        | Action   | Description                       |
-| -------------- | ----------- | ------------- | -------- | --------------------------------- |
-| `/todo`        | `/`         | `GET`         | #index   | List all to dos                   |
-| `/todo/new`    | `/new`      | `GET`         | #new     | Render form to create a new to do |
-| `/todo`        | `/`         | `POST`        | #create  | Create new to do in the database  |
-| `/todo/1`      | `/:id`      | `GET`         | #show    | Show a single to do               |
-| `/todo/1/edit` | `/:id/edit` | `GET`         | #edit    | Render form to update a to do     |
-| `/todo/1`      | `/:id`      | `PATCH`/`PUT` | #update  | Update to do in the database      |
-| `/todo/1`      | `/:id`      | `DELETE`      | #destroy | Delete a to do                    |
+| URL              | Path        | Method        | Action   | Description                         |
+| ---------------- | ----------- | ------------- | -------- | ----------------------------------- |
+| `/author`        | `/`         | `GET`         | #index   | List all authors                    |
+| `/author/new`    | `/new`      | `GET`         | #new     | Render form to create a new author  |
+| `/author`        | `/`         | `POST`        | #create  | Create a new author in the database |
+| `/author/1`      | `/:id`      | `GET`         | #show    | Show a single author                |
+| `/author/1/edit` | `/:id/edit` | `GET`         | #edit    | Render form to update an author     |
+| `/author/1`      | `/:id`      | `PATCH`/`PUT` | #update  | Update an author in the database    |
+| `/author/1`      | `/:id`      | `DELETE`      | #destroy | Delete an author                    |
 
 For every resource in our application, we want to follow this structure. That
 doesn't necessarily meant that every resource will have
