@@ -648,7 +648,7 @@ router.post("/", authorController.create);
 router.get("/:id", authorController.show);
 router.get("/:id/edit", authorController.edit);
 router.put("/:id", authorController.update);
-router.destroy("/:id", authorController.destroy);
+router.delete("/:id", authorController.destroy);
 
 module.exports = router;
 ```
