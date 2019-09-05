@@ -359,7 +359,8 @@ nodemon index.js
 
 How do we make our routes dynamic? Using parameters!
 
-Route parameters give us flexibility when writing routes in Express.
+[Route parameters](https://expressjs.com/en/api.html#req.params) give us
+flexibility when writing routes in Express.
 
 Let's update `index.js` to include:
 
