@@ -159,6 +159,15 @@ Instead of writing all that HTML by hand, lets build and use tools that make it
 so we can dynamically retrieve content and "fill in" an HTML document like a
 template. That is exactly what Express and any other web framework does!
 
+In server-side applications, we can use information in the HTTP requests,
+including...
+
+- The _method_ and the URL _path_ in the Request line
+- The Request body
+
+..to dynamically generate the content we want to send back to the client in the
+Response.
+
 When we use Express, we don't need to have a `whiskers.html` file on our
 server - we just need to have all our information about whiskers in our
 database. Then when someone makes a GET request to
