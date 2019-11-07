@@ -1,5 +1,7 @@
 # Intro to Express
 
+
+
 ## Prerequisites
 
 - JavaScript
@@ -218,10 +220,9 @@ Let's break each part of this down:
 
 - `router` - this is going to be an instance of Express (typically a variable
   called `app`) or an instance of the
-  [Express Router (`express.Router()`)](https://expressjs.com/en/4x/api.html#router)
+  [Express Router (`express.Router()`)](https://expressjs.com/en/4x/api.html#router) (which we will talk about more later)
 - `method` - this is going to be a method of our router object. Luckily, the
-  name of the methods are identical to the HTTP method names, meaning the method
-  names are: `get`, `post`, `put`, `patch`, and `delete`.
+  name of the methods are identical to the HTTP method names, meaning: `get`, `post`, `put`, `patch`, and `delete`.
 - `path` - this is going to be a string that matches the path of the URL
 - `controllerAction` - this is a callback function that handles the request and
   sends a response.
@@ -267,63 +268,7 @@ app.patch("/:id", function(req, res) {});
 app.delete("/:id", function(req, res) {});
 ```
 
-The examples above attach routes directly to the instance of our Express app.
-This works great if our app is small and only has a few routes.
-
-The apps we're building are big, so defining our routes like this will quickly
-become unmanageable. So we're going to use the
-[Express Router](https://expressjs.com/en/4x/api.html#router):
-
-If we used the Author model as the basis of our resource, we can start building
-the routes by:
-
-- Creating a directory called `routes` in the root of th express application.
-- Creating a `routes/author.js` file and enter the following:
-
-```js
-// routes/author.js
-const express = require("express");
-const router = express.Router();
-
-router.get("/", function(req, res) {
-  res.send("author - hello from GET");
-});
-
-router.post("/", function(req, res) {
-  res.send("author - hello from POST");
-});
-
-router.put("/:id", function(req, res) {
-  res.send("author:id - hello from PUT");
-});
-
-router.patch("/:id", function(req, res) {
-  res.send("author:id hello from GET");
-});
-
-router.delete("/:id", function(req, res) {
-  res.send("author:id - hello from DELETE");
-});
-
-module.exports = router;
-```
-
-Then inside our `index.js` (or wherever we're actually creating an instance of
-our Express app):
-
-```js
-const express = require("express");
-const app = express();
-const authorRouter = require("./routes/author.js");
-
-// add befpre the previous routs
-app.use("/author", authorRouter);
-
-// rest of the code
-```
-
 ## Closing
 
-Over the next few classes, we're going to continue using Express to building out
-dynamic applications. Next, we'll learn about Models and build out models for
-our apps so that we can incorporate data interaction with MongoDB.
+Over the next few classes, we're going to continue using Express to build out
+dynamic applications. Right now, we are able to work in Express to send something to the browser. As we continue working with Express, we will be building larger APIs complete with full CRUD functionality. You are one step closer to putting together your first full stack application!
