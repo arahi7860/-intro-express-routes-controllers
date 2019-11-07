@@ -1,6 +1,6 @@
 # Intro to Express
 
-
+![Express](./images/express_logo.png)
 
 ## Prerequisites
 
