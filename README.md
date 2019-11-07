@@ -203,9 +203,9 @@ We start up our application a bit differently now:
 nodemon index.js
 ```
 
-In the browser, we 
+In the browser, we now see the string we wanted to send - "Hello World".
 
-### Defining Routes in Express
+### Structure of a Route
 
 Defining routes in Express is pretty straightforward. Every route we define is
 going to follow this pattern:
@@ -232,7 +232,7 @@ Let's break each part of this down:
 
 ### Identifying the Parts of a Route
 
-An example of a "hello world" route would look like this:
+Here's the "hello world" route we just worked with:
 
 ```js
 const express = require("express");
@@ -320,72 +320,6 @@ const authorRouter = require("./routes/author.js");
 app.use("/author", authorRouter);
 
 // rest of the code
-```
-
-## RESTful routing in Express
-
-Notice in the examples above that we're passing in a callback function to the
-route method? That is one way to design and implement your routes - but there's
-a better way to do it: separate your routes and your controller actions.
-
-In the example above, we're doing our routing and controlling in the same place.
-We want to separate them by moving those callback functions. If we think back to
-our file system from before: we're going to define our routes inside the
-`routes/` directory and our controllers inside the `controllers/` directory. A
-controller is just an object made up of methods (the actions in the Resource
-Table above). We'll export that object from our `controllers/` directory and
-import it into our router. Then, we'll define our routes and map them to the
-corresponding controller action.
-
-```js
-// controllers/author.js
-module.exports = {
-  index: function(req, res) {
-    // listing all authors
-    res.send("listing all authors");
-  },
-  new: function(req, res) {
-    // rending the form to create a new author
-    res.send("rending the form to create a new author");
-  },
-  create: function(req, res) {
-    // creating a new author and saving it to the database
-    res.send("creating a new author and saving it to the database");
-  },
-  show: function(req, res) {
-    // displaying the data for a single author
-    res.send("displaying the data for a single author");
-  },
-  edit: function(req, res) {
-    // rendering the form to update an existing author
-    res.send("rendering the form to update an existing author");
-  },
-  update: function(req, res) {
-    // updating an author in the database
-    res.send("updating an author in the database");
-  },
-  destroy: function(req, res) {
-    // deleting an author
-    res.send("deleting an author");
-  }
-};
-```
-
-```js
-// routers/author.js
-const express = require("express");
-const router = express.Router();
-const authorController = require("../controllers/author.js");
-
-router.get("/", authorController.index);
-router.get("/new", authorController.new);
-router.post("/", authorController.create);
-router.get("/:id", authorController.show);
-router.get("/:id/edit", authorController.edit);
-router.put("/:id", authorController.update);
-router.delete("/:id", authorController.destroy);
-
-module.exports = router;
 ```
 
 ## Closing
